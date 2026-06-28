@@ -1,8 +1,14 @@
 import React from 'react';
-import { Mail } from 'lucide-react';
+import { Mail, Github } from 'lucide-react';
 
 function SocialLinks({ className = "" }) {
   const links = [
+    {
+      name: 'GitHub',
+      icon: Github,
+      href: 'https://github.com/DonRobertDI',
+      label: 'Visit GitHub profile'
+    },
     {
       name: 'Email',
       icon: Mail,
@@ -15,6 +21,7 @@ function SocialLinks({ className = "" }) {
     <div className={`flex items-center gap-4 ${className}`}>
       {links.map((link) => {
         const Icon = link.icon;
+
         return (
           <a
             key={link.name}
