@@ -1,22 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin } from 'lucide-react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-
 function ExperienceCard({ experience, index }) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="timeline-entry"
+      initial={{ opacity: 0, y: 44, filter: 'blur(10px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      viewport={{ once: true, amount: 0.22 }}
+      transition={{ duration: 0.8, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
     >
-      <Card className="hover:shadow-lg transition-all duration-300">
-        <CardHeader>
-          <CardTitle className="text-xl">{experience.title}</CardTitle>
-          <CardDescription className="text-base font-medium text-primary">
-            {experience.organization}
-          </CardDescription>
-          <div className="flex flex-wrap gap-4 text-sm opacity-80 mt-2">
+      <span className="timeline-entry__dot" aria-hidden="true" />
+      <article className="timeline-card">
+        <div className="timeline-card__meta">
+          <span>0{index + 1}</span>
+          <div className="flex flex-wrap gap-4 text-sm">
             <div className="flex items-center gap-1">
               <Calendar className="w-4 h-4" />
               <span>{experience.period}</span>
@@ -28,23 +26,28 @@ function ExperienceCard({ experience, index }) {
               </div>
             )}
           </div>
-        </CardHeader>
+        </div>
+        <div className="timeline-card__content">
+          <div>
+            <p className="eyebrow">{experience.organization}</p>
+            <h3>{experience.title}</h3>
+          </div>
         {experience.description && (
-          <CardContent>
-            <p className="opacity-90">{experience.description}</p>
+          <div>
+            <p className="timeline-card__description">{experience.description}</p>
             {experience.achievements && experience.achievements.length > 0 && (
-              <ul className="mt-4 space-y-2">
+              <ul className="timeline-card__list">
                 {experience.achievements.map((achievement) => (
-                  <li key={achievement} className="text-sm opacity-90 flex items-start gap-2">
-                    <span className="text-primary mt-1">&bull;</span>
-                    <span>{achievement}</span>
+                  <li key={achievement}>
+                    <span aria-hidden="true">↳</span>{achievement}
                   </li>
                 ))}
               </ul>
             )}
-          </CardContent>
+          </div>
         )}
-      </Card>
+        </div>
+      </article>
     </motion.div>
   );
 }

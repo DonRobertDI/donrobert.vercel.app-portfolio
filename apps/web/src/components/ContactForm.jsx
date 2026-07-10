@@ -67,8 +67,8 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="space-y-2">
+    <form onSubmit={handleSubmit} className="contact-form">
+      <div className="contact-field">
         <Label htmlFor="name">Name</Label>
         <Input
           id="name"
@@ -76,16 +76,16 @@ function ContactForm() {
           type="text"
           value={formData.name}
           onChange={handleChange}
-          className="text-foreground"
+          className="premium-input"
           placeholder="Your name"
           aria-invalid={errors.name ? 'true' : 'false'}
         />
         {errors.name && (
-          <p className="text-sm text-destructive">{errors.name}</p>
+          <p className="field-error" role="alert">{errors.name}</p>
         )}
       </div>
 
-      <div className="space-y-2">
+      <div className="contact-field">
         <Label htmlFor="email">Email</Label>
         <Input
           id="email"
@@ -93,35 +93,35 @@ function ContactForm() {
           type="email"
           value={formData.email}
           onChange={handleChange}
-          className="text-foreground"
+          className="premium-input"
           placeholder="your.email@example.com"
           aria-invalid={errors.email ? 'true' : 'false'}
         />
         {errors.email && (
-          <p className="text-sm text-destructive">{errors.email}</p>
+          <p className="field-error" role="alert">{errors.email}</p>
         )}
       </div>
 
-      <div className="space-y-2">
+      <div className="contact-field">
         <Label htmlFor="message">Message</Label>
         <Textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
-          className="min-h-[150px] text-foreground"
+          className="premium-input min-h-[150px]"
           placeholder="Your message..."
           aria-invalid={errors.message ? 'true' : 'false'}
         />
         {errors.message && (
-          <p className="text-sm text-destructive">{errors.message}</p>
+          <p className="field-error" role="alert">{errors.message}</p>
         )}
       </div>
 
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full transition-all duration-200 active:scale-[0.98]"
+        className="contact-submit"
       >
         {isSubmitting ? 'Opening Email...' : 'Send Message'}
       </Button>

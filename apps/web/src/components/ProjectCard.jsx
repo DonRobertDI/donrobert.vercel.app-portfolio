@@ -1,62 +1,53 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-
 function ProjectCard({ project, index }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="project-card-wrap"
+      initial={{ opacity: 0, y: 54, filter: 'blur(12px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      viewport={{ once: true, amount: 0.16 }}
+      transition={{ duration: 0.8, delay: (index % 2) * 0.08, ease: [0.22, 1, 0.36, 1] }}
     >
-      <Card className="h-full flex flex-col hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-        <CardHeader>
-          <div className="flex items-start justify-between gap-4">
-            <div className="flex-1">
-              <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
-              <CardDescription className="text-base">{project.description}</CardDescription>
-            </div>
+      <article className="project-card">
+        <div className="project-card__top">
+          <span className="project-card__number">/ 0{index + 1}</span>
+          <span className="project-card__type">SELECTED WORK</span>
+          <div className="project-card__icon">
             {project.link && (
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-primary/80 transition-all duration-200"
+                className="project-card__link"
                 aria-label={`View ${project.title} project`}
               >
                 <ExternalLink className="w-5 h-5" />
               </a>
             )}
           </div>
-        </CardHeader>
-        <CardContent className="flex-1 flex flex-col gap-4">
-          <div>
-            <h4 className="text-sm font-semibold mb-2 opacity-80">Technologies</h4>
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech) => (
-                <Badge key={tech} variant="secondary" className="text-xs">
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-          </div>
-          {project.features && project.features.length > 0 && (
-            <div className="mt-auto">
-              <h4 className="text-sm font-semibold mb-2 opacity-80">Key Features</h4>
-              <ul className="space-y-1">
-                {project.features.map((feature) => (
-                  <li key={feature} className="text-sm opacity-90 flex items-start gap-2">
-                    <span className="text-primary mt-1">&bull;</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </CardContent>
-      </Card>
+        </div>
+
+        <div className="project-card__body">
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
+        </div>
+
+        {project.features && project.features.length > 0 && (
+          <ul className="project-card__features">
+            {project.features.map((feature) => (
+              <li key={feature}><span aria-hidden="true">↳</span>{feature}</li>
+            ))}
+          </ul>
+        )}
+
+        <div className="project-card__tech" aria-label="Technologies">
+          {project.technologies.map((tech) => (
+            <span key={tech}>{tech}</span>
+          ))}
+        </div>
+      </article>
     </motion.div>
   );
 }

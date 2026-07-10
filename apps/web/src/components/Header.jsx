@@ -1,101 +1,159 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Moon, Sun } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react';
+
+const navLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'Projects', path: '/projects' },
+  { name: 'Skills', path: '/skills' },
+  { name: 'Experience', path: '/experience' },
+  { name: 'Contact', path: '/contact' }
+];
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(() => {
+    try {
+      return localStorage.getItem('portfolio-theme') !== 'light';
+    } catch {
+      return true;
+    }
+  });
+  const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
-    const root = window.document.documentElement;
-    if (isDark) {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
+    const root = document.documentElement;
+    root.classList.toggle('dark', isDark);
+    try {
+      localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+    } catch {
+      // The theme still works when storage is unavailable.
     }
   }, [isDark]);
 
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Skills', path: '/skills' },
-    { name: 'Experience', path: '/experience' },
-    { name: 'Contact', path: '/contact' }
-  ];
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-  };
+  useEffect(() => {
+    const updateProgress = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(scrollable > 0 ? window.scrollY / scrollable : 0);
+    };
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+    return () => window.removeEventListener('scroll', updateProgress);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!isMenuOpen) return undefined;
+    const onKeyDown = (event) => event.key === 'Escape' && setIsMenuOpen(false);
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-primary">DRD</span>
+    <>
+      <header className="site-header">
+        <div className="site-header__inner">
+          <Link to="/" className="brand" aria-label="Don Robert Dimasayao, home">
+            DRD<span>.</span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-sm font-medium transition-all duration-200 hover:text-primary ${
-                  location.pathname === link.path
-                    ? 'text-primary font-semibold'
-                    : 'text-muted-foreground'
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+          <nav className="desktop-nav" aria-label="Primary navigation">
+            {navLinks.map((link, index) => {
+              const active = location.pathname === link.path;
+              return (
+                <Link key={link.path} to={link.path} className={`nav-link ${active ? 'is-active' : ''}`}>
+                  <span className="nav-link__index">0{index + 1}</span>
+                  <span>{link.name}</span>
+                </Link>
+              );
+            })}
           </nav>
 
-          <div className="flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-              className="transition-all duration-200"
+          <div className="header-actions">
+            <button
+              type="button"
+              onClick={() => setIsDark((current) => !current)}
+              className="icon-button"
+              aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
             >
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
+              {isDark ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
+            </button>
 
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
+            <button
+              type="button"
+              className="menu-button"
+              onClick={() => setIsMenuOpen(true)}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+              <span>Menu</span>
+              <Menu aria-hidden="true" />
+            </button>
           </div>
         </div>
 
+        <div className="scroll-progress" aria-hidden="true">
+          <span style={{ transform: `scaleX(${scrollProgress})` }} />
+        </div>
+      </header>
+
+      <AnimatePresence>
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block py-2 text-sm font-medium transition-all duration-200 hover:text-primary ${
-                  location.pathname === link.path
-                    ? 'text-primary font-semibold'
-                    : 'text-muted-foreground'
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
+          <motion.div
+            id="mobile-menu"
+            className="mobile-menu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation menu"
+          >
+            <motion.div
+              className="mobile-menu__panel"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
+            >
+              <div className="mobile-menu__top">
+                <span className="brand">DRD<span>.</span></span>
+                <button type="button" className="icon-button" onClick={() => setIsMenuOpen(false)} aria-label="Close menu" autoFocus>
+                  <X aria-hidden="true" />
+                </button>
+              </div>
+
+              <nav className="mobile-menu__nav" aria-label="Mobile navigation">
+                {navLinks.map((link, index) => (
+                  <Link key={link.path} to={link.path} className={location.pathname === link.path ? 'is-active' : ''}>
+                    <span>0{index + 1}</span>
+                    <strong>{link.name}</strong>
+                    <ArrowUpRight aria-hidden="true" />
+                  </Link>
+                ))}
+              </nav>
+
+              <div className="mobile-menu__footer">
+                <span>Available for opportunities</span>
+                <span>Philippines / PHT</span>
+              </div>
+            </motion.div>
+          </motion.div>
         )}
-      </div>
-    </header>
+      </AnimatePresence>
+    </>
   );
 }
 

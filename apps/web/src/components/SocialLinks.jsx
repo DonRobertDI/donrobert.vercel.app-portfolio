@@ -24,7 +24,7 @@ function SocialLinks({ className = "" }) {
   ];
 
   return (
-    <div className={`flex items-center gap-4 ${className}`}>
+    <div className={`social-links ${className}`}>
       {links.map((link) => {
         const Icon = link.icon;
 
@@ -35,9 +35,10 @@ function SocialLinks({ className = "" }) {
             target={link.name !== 'Email' ? '_blank' : undefined}
             rel={link.name !== 'Email' ? 'noopener noreferrer' : undefined}
             aria-label={link.label}
-            className="text-muted-foreground hover:text-primary transition-all duration-200 hover:scale-110"
+            className="social-link"
           >
             <Icon className="w-5 h-5" />
+            <span>{link.name}</span>
           </a>
         );
       })}
