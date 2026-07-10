@@ -6,32 +6,36 @@ import SkillCard from '@/components/SkillCard.jsx';
 function SkillsPage() {
   const skillCategories = [
     {
-      category: 'Programming Languages',
-      skills: ['C++', 'Java', 'C#', 'PHP', 'SQL']
+      category: 'Frontend',
+      skills: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Vite', 'Tailwind CSS', 'Responsive Web Design']
     },
     {
-      category: 'Web Development',
-      skills: ['Laravel', 'HTML', 'CSS', 'MySQL', 'JavaScript']
+      category: 'Backend',
+      skills: ['PHP', 'Laravel', 'Node.js', 'Express.js', 'REST API Development', 'MVC Architecture']
     },
     {
-      category: 'AI & Productivity Tools',
-      skills: ['ChatGPT', 'Generative AI', 'AI-Assisted Research', 'AI Content Creation', 'Prompt Engineering']
+      category: 'Databases',
+      skills: ['MySQL', 'PostgreSQL', 'Database Design', 'Database Management', 'SQL']
     },
     {
-      category: 'Software Development',
-      skills: ['Git/GitHub', 'Visual Studio Code', 'SDLC', 'Debugging', 'Version Control']
+      category: 'Tools and Platforms',
+      skills: ['Git', 'GitHub', 'Visual Studio Code', 'Postman', 'npm', 'Figma', 'Android Studio']
     },
     {
-      category: 'Data & Analytics',
-      skills: ['Data Management', 'Data Analysis', 'Database Design', 'Data Validation', 'Report Generation']
+      category: 'Development Skills',
+      skills: ['Full-Stack Web Development', 'API Integration', 'Debugging and Troubleshooting', 'PDF Generation', 'Web Scraping', 'Data Extraction', 'Workflow Automation', 'AI-Assisted Development', 'Technical Documentation', 'Software Development Life Cycle']
+    },
+    {
+      category: 'Soft Skills',
+      skills: ['Problem Solving', 'Analytical Thinking', 'Communication', 'Team Collaboration', 'Adaptability', 'Attention to Detail', 'Time Management', 'Fast Learner']
     }
   ];
 
   return (
     <>
       <Helmet>
-        <title>Skills - Don Robert Dimasayao</title>
-        <meta name="description" content="Technical skills and expertise of Don Robert Dimasayao in programming, web development, AI tools, and data analytics." />
+        <title>Technical Skills | Don Robert Dimasayao</title>
+        <meta name="description" content="Technical skills of Don Robert Dimasayao across frontend development, backend development, databases, tools, automation, and software development practices." />
       </Helmet>
 
       <div className="min-h-screen py-20">
@@ -39,7 +43,7 @@ function SkillsPage() {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Skills & Expertise</h1>
             <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
-              A comprehensive overview of my technical skills and areas of expertise
+              A practical overview of the technologies, tools, and development skills I use to build web applications and software projects
             </p>
           </div>
 

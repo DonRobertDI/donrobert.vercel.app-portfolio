@@ -9,7 +9,7 @@ function Footer() {
           <div className="flex flex-col items-center md:items-start gap-2">
             <span className="text-lg font-semibold">Don Robert Dimasayao</span>
             <p className="text-sm opacity-80">
-              © {new Date().getFullYear()} All rights reserved.
+              &copy; {new Date().getFullYear()} All rights reserved.
             </p>
           </div>
 

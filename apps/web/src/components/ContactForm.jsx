@@ -37,7 +37,7 @@ function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -46,26 +46,16 @@ function ContactForm() {
 
     setIsSubmitting(true);
 
-    try {
-      const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-      const newSubmission = {
-        ...formData,
-        timestamp: new Date().toISOString(),
-        id: Date.now()
-      };
-      submissions.push(newSubmission);
-      localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
+    const subject = encodeURIComponent(`Portfolio message from ${formData.name.trim()}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name.trim()}\nEmail: ${formData.email.trim()}\n\nMessage:\n${formData.message.trim()}`
+    );
 
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      toast.success('Message sent successfully');
-      setFormData({ name: '', email: '', message: '' });
-      setErrors({});
-    } catch (error) {
-      toast.error('Failed to send message. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    window.location.href = `mailto:dimasayaodonrobert@gmail.com?subject=${subject}&body=${body}`;
+    toast.success('Opening your email client to send the message');
+    setFormData({ name: '', email: '', message: '' });
+    setErrors({});
+    setIsSubmitting(false);
   };
 
   const handleChange = (e) => {
@@ -133,7 +123,7 @@ function ContactForm() {
         disabled={isSubmitting}
         className="w-full transition-all duration-200 active:scale-[0.98]"
       >
-        {isSubmitting ? 'Sending...' : 'Send Message'}
+        {isSubmitting ? 'Opening Email...' : 'Send Message'}
       </Button>
     </form>
   );

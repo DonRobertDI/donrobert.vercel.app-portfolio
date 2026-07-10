@@ -9,24 +9,26 @@ import ProjectCard from '@/components/ProjectCard.jsx';
 function HomePage() {
   const featuredProjects = [
     {
-      title: 'Augmented Reality Anatomy Learning System',
-      description: 'Interactive anatomy visualizations for educational purposes using AR technology',
-      technologies: ['Unity', 'C#', 'Vuforia', 'ARCore', 'Firebase'],
+      title: 'Anatomy Trainer',
+      description: 'An augmented reality learning system designed to help nursing students study human anatomy through interactive 3D models and learning activities.',
+      technologies: ['Unity', 'C#', 'Vuforia', 'Firebase', 'Augmented Reality'],
       features: [
-        'Real-time 3D anatomy models',
-        'Interactive learning modules',
-        'Cross-platform AR support'
+        'Interactive 3D anatomy models',
+        'Augmented reality visualization',
+        'Learning modules and assessments',
+        'Student-focused educational interface'
       ]
     },
     {
-      title: 'Internal Audit Management System',
-      description: 'Comprehensive audit management platform with report generation and data analytics',
-      technologies: ['Laravel', 'MySQL', 'PHP', 'PDF Export'],
+      title: 'Christmas Light Mockup Studio',
+      description: 'A full-stack internal business tool for managing customers and generating AI-assisted Christmas light installation mockups from uploaded property images.',
+      technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'REST API', 'Database', 'AI Integration'],
       features: [
-        'Automated report generation',
-        'Advanced data filtering',
-        'SQL query optimization',
-        'Form validation system'
+        'Customer record management',
+        'Image upload workflow',
+        'AI-assisted mockup generation',
+        'Saved mockup history',
+        'Responsive business dashboard'
       ]
     }
   ];
@@ -34,8 +36,8 @@ function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Don Robert Dimasayao - Data Scientist & Full-Stack Developer</title>
-        <meta name="description" content="Portfolio of Don Robert Dimasayao, a Cum Laude graduate in Computer Science specializing in Data Science, AI, and Full-Stack Development." />
+        <title>Don Robert Dimasayao | Junior Full-Stack Web Developer</title>
+        <meta name="description" content="Portfolio of Don Robert Dimasayao, a junior full-stack web developer building web applications, internal tools, automation scripts, API integrations, and AI-assisted solutions." />
       </Helmet>
 
       <div className="min-h-screen">
@@ -59,13 +61,13 @@ function HomePage() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Don Robert Dimasayao
+                Hi, I'm Don Robert
               </h1>
               <p className="text-xl md:text-2xl text-primary font-semibold mb-4">
-                Data Scientist & Full-Stack Developer
+                Junior Full-Stack Web Developer
               </p>
               <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto mb-8">
-                Leveraging AI and technical expertise to build innovative solutions that transform data into actionable insights
+                I build practical web applications, internal business tools, automation scripts, and AI-assisted solutions using modern frontend and backend technologies.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Button asChild size="lg" className="transition-all duration-200 active:scale-[0.98]">
@@ -74,7 +76,7 @@ function HomePage() {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="transition-all duration-200 active:scale-[0.98]">
-                  <Link to="/contact">Get in Touch</Link>
+                  <Link to="/contact">Contact Me</Link>
                 </Button>
               </div>
             </motion.div>
@@ -92,27 +94,27 @@ function HomePage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">About Me</h2>
               <div className="max-w-4xl mx-auto">
                 <p className="text-lg leading-relaxed mb-6 opacity-90">
-                  I am a Cum Laude graduate in Computer Science from Bicol University with a strong foundation in software development, database management, and data science. My academic excellence and hands-on experience have equipped me with the skills to tackle complex technical challenges.
+                  I am a Computer Science graduate who enjoys turning real-world processes into functional and maintainable software. My experience includes full-stack development, database management, API integration, workflow automation, debugging, and responsive interface development.
                 </p>
                 <p className="text-lg leading-relaxed mb-8 opacity-90">
-                  Currently seeking opportunities in Data Science and Prompt Engineering, I am passionate about leveraging AI technologies and analytical skills to drive innovation and create meaningful impact through data-driven solutions.
+                  I have hands-on experience building full-stack web applications, internal business systems, automation tools, API integrations, and AI-assisted projects using technologies such as Laravel, PHP, JavaScript, React, Node.js, Express, MySQL, PostgreSQL, REST APIs, Git, and GitHub.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
                   <div className="flex flex-col items-center text-center p-6 bg-card rounded-xl">
                     <Code className="w-12 h-12 text-primary mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Software Development</h3>
-                    <p className="text-sm opacity-80">Full-stack development with modern frameworks and best practices</p>
+                    <h3 className="text-lg font-semibold mb-2">Full-Stack Development</h3>
+                    <p className="text-sm opacity-80">Frontend and backend development for practical web applications</p>
                   </div>
                   <div className="flex flex-col items-center text-center p-6 bg-card rounded-xl">
                     <Database className="w-12 h-12 text-primary mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Database Management</h3>
-                    <p className="text-sm opacity-80">Expert in database design, optimization, and data validation</p>
+                    <h3 className="text-lg font-semibold mb-2">Database & API Work</h3>
+                    <p className="text-sm opacity-80">Database-backed systems, REST APIs, and workflow integrations</p>
                   </div>
                   <div className="flex flex-col items-center text-center p-6 bg-card rounded-xl">
                     <Brain className="w-12 h-12 text-primary mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Data Science & AI</h3>
-                    <p className="text-sm opacity-80">Leveraging AI tools and data analysis for intelligent solutions</p>
+                    <h3 className="text-lg font-semibold mb-2">AI-Assisted Automation</h3>
+                    <p className="text-sm opacity-80">Automation scripts and AI-assisted workflows for real tasks</p>
                   </div>
                 </div>
               </div>
@@ -131,7 +133,7 @@ function HomePage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Featured Projects</h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {featuredProjects.map((project, index) => (
-                  <ProjectCard key={index} project={project} index={index} />
+                  <ProjectCard key={project.title} project={project} index={index} />
                 ))}
               </div>
               <div className="text-center mt-12">

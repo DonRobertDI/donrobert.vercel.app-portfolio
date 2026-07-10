@@ -6,16 +6,18 @@ import ExperienceCard from '@/components/ExperienceCard.jsx';
 function ExperiencePage() {
   const experiences = [
     {
-      title: 'Laravel Developer Intern',
-      organization: 'DOST-PES',
+      title: 'Web Developer Intern',
+      organization: 'Department of Science and Technology',
       period: 'Jun 2025 - Jul 2025',
       location: 'Philippines',
-      description: 'Completed a 240-hour intensive internship program focused on Laravel development and web application architecture.',
+      description: 'Completed a 240-hour internship supporting technical and administrative operations while contributing to the development and maintenance of a Laravel-based internal web application.',
       achievements: [
-        'Developed and maintained web applications using Laravel framework',
-        'Implemented database schemas and optimized SQL queries',
-        'Collaborated with team members on project planning and execution',
-        'Gained hands-on experience with modern web development practices'
+        'Helped develop and maintain a Laravel-based internal audit management system',
+        'Assisted in digitizing a previously paper-based workflow',
+        'Worked with PHP, Laravel, JavaScript, MySQL, and database-backed forms',
+        'Implemented or supported role-based access, dashboards, reports, and PDF generation',
+        'Assisted with debugging, database management, technical documentation, and general IT tasks',
+        'Collaborated with staff to understand process requirements and improve the system'
       ]
     }
   ];
@@ -23,15 +25,15 @@ function ExperiencePage() {
   const education = [
     {
       title: 'Bachelor of Science in Computer Science',
-      organization: 'Bicol University',
-      period: '2022 - 2026',
+      organization: 'Bicol University Polangui',
+      period: 'Aug 2022 - Jun 2026',
       location: 'Polangui, Albay, Philippines',
-      description: 'Graduated Cum Laude with a strong foundation in computer science fundamentals, software engineering, and data structures.',
+      description: 'Completed a Bachelor of Science in Computer Science with experience in software development, database systems, web technologies, augmented reality, and full-stack application development.',
       achievements: [
-        'Achieved Cum Laude honors',
-        'Specialized in software development and database management',
-        'Completed capstone projects in AR technology and web development',
-        'Active participation in programming competitions and hackathons'
+        'Developed Anatomy Trainer as a thesis project',
+        'Built web applications using frontend and backend technologies',
+        'Studied databases, software engineering, algorithms, and system development',
+        'Gained experience with technical documentation and project presentation'
       ]
     }
   ];
@@ -39,8 +41,8 @@ function ExperiencePage() {
   return (
     <>
       <Helmet>
-        <title>Experience - Don Robert Dimasayao</title>
-        <meta name="description" content="Professional experience and educational background of Don Robert Dimasayao, including internships and academic achievements." />
+        <title>Experience and Education | Don Robert Dimasayao</title>
+        <meta name="description" content="Experience and education of Don Robert Dimasayao, a junior full-stack web developer with Laravel internship experience and a Computer Science background." />
       </Helmet>
 
       <div className="min-h-screen py-20">
@@ -48,7 +50,7 @@ function ExperiencePage() {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Experience & Education</h1>
             <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
-              My professional journey and academic achievements
+              My internship experience, education, and hands-on software development background
             </p>
           </div>
 
@@ -59,7 +61,7 @@ function ExperiencePage() {
               </h2>
               <div className="space-y-6">
                 {experiences.map((experience, index) => (
-                  <ExperienceCard key={index} experience={experience} index={index} />
+                  <ExperienceCard key={experience.title} experience={experience} index={index} />
                 ))}
               </div>
             </section>
@@ -71,7 +73,7 @@ function ExperiencePage() {
               </h2>
               <div className="space-y-6">
                 {education.map((edu, index) => (
-                  <ExperienceCard key={index} experience={edu} index={index} />
+                  <ExperienceCard key={edu.title} experience={edu} index={index} />
                 ))}
               </div>
             </section>

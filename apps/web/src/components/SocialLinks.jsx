@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Github } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 
 function SocialLinks({ className = "" }) {
   const links = [
@@ -8,6 +8,12 @@ function SocialLinks({ className = "" }) {
       icon: Github,
       href: 'https://github.com/DonRobertDI',
       label: 'Visit GitHub profile'
+    },
+    {
+      name: 'LinkedIn',
+      icon: Linkedin,
+      href: 'https://www.linkedin.com/in/donrobertdimasayao/',
+      label: 'LinkedIn profile'
     },
     {
       name: 'Email',

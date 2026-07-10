@@ -46,9 +46,9 @@ function ProjectCard({ project, index }) {
             <div className="mt-auto">
               <h4 className="text-sm font-semibold mb-2 opacity-80">Key Features</h4>
               <ul className="space-y-1">
-                {project.features.map((feature, idx) => (
-                  <li key={idx} className="text-sm opacity-90 flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
+                {project.features.map((feature) => (
+                  <li key={feature} className="text-sm opacity-90 flex items-start gap-2">
+                    <span className="text-primary mt-1">&bull;</span>
                     <span>{feature}</span>
                   </li>
                 ))}

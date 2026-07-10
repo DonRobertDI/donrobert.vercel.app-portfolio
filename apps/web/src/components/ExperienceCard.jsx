@@ -34,9 +34,9 @@ function ExperienceCard({ experience, index }) {
             <p className="opacity-90">{experience.description}</p>
             {experience.achievements && experience.achievements.length > 0 && (
               <ul className="mt-4 space-y-2">
-                {experience.achievements.map((achievement, idx) => (
-                  <li key={idx} className="text-sm opacity-90 flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
+                {experience.achievements.map((achievement) => (
+                  <li key={achievement} className="text-sm opacity-90 flex items-start gap-2">
+                    <span className="text-primary mt-1">&bull;</span>
                     <span>{achievement}</span>
                   </li>
                 ))}

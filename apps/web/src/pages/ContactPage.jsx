@@ -10,8 +10,8 @@ function ContactPage() {
   return (
     <>
       <Helmet>
-        <title>Contact - Don Robert Dimasayao</title>
-        <meta name="description" content="Get in touch with Don Robert Dimasayao for opportunities in Data Science, Prompt Engineering, and Full-Stack Development." />
+        <title>Contact | Don Robert Dimasayao</title>
+        <meta name="description" content="Contact Don Robert Dimasayao for junior web development, full-stack development, technical support, automation, and AI-assisted development opportunities." />
       </Helmet>
 
       <div className="min-h-screen py-20">
@@ -19,7 +19,7 @@ function ContactPage() {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
             <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
-              I'm always open to discussing new opportunities, collaborations, or just having a chat about technology
+              I'm open to junior developer opportunities, technical collaborations, and roles where I can contribute, learn from experienced professionals, and continue building practical software.
             </p>
           </div>
 
@@ -95,20 +95,24 @@ function ContactPage() {
                   <h3 className="text-xl font-semibold mb-2">Looking for opportunities in</h3>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
-                      <span>•</span>
-                      <span>Data Science</span>
+                      <span>&bull;</span>
+                      <span>Junior Web Development</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span>•</span>
-                      <span>Prompt Engineering</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span>•</span>
+                      <span>&bull;</span>
                       <span>Full-Stack Development</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span>•</span>
-                      <span>AI & Machine Learning</span>
+                      <span>&bull;</span>
+                      <span>Software Engineering</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span>&bull;</span>
+                      <span>Technical Support and Automation</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span>&bull;</span>
+                      <span>AI-Assisted Development</span>
                     </li>
                   </ul>
                 </CardContent>

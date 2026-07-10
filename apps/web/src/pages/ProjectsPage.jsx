@@ -5,28 +5,62 @@ import ProjectCard from '@/components/ProjectCard.jsx';
 function ProjectsPage() {
   const projects = [
     {
-      title: 'Augmented Reality Anatomy Learning System',
-      description: 'An innovative educational platform that uses augmented reality to provide interactive 3D anatomy visualizations. Built with Unity and ARCore, this system enables students to explore human anatomy in an immersive and engaging way.',
-      technologies: ['Unity', 'C#', 'Vuforia', 'ARCore', 'Firebase'],
+      title: 'Anatomy Trainer',
+      description: 'An augmented reality learning system created as a thesis project for nursing students. It provides interactive anatomy models and educational activities to support anatomy learning.',
+      technologies: ['Unity', 'C#', 'Vuforia', 'Firebase', 'Augmented Reality'],
       features: [
-        'Real-time 3D anatomy model rendering',
-        'Interactive learning modules with quizzes',
-        'Cross-platform AR support (Android/iOS)',
-        'Cloud-based progress tracking with Firebase',
-        'Multi-user collaboration features'
+        'Interactive human anatomy models',
+        'AR-based visualization',
+        'Learning activities and assessments',
+        'Student progress-oriented experience'
+      ]
+    },
+    {
+      title: 'Christmas Light Mockup Studio',
+      description: 'A professional full-stack MVP for a Christmas light installation company. It allows users to manage customers, upload property images, and generate AI-assisted lighting mockups.',
+      technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'REST API', 'AI Integration'],
+      features: [
+        'Customer management',
+        'Image uploads',
+        'AI-generated mockup workflow',
+        'Stored customer mockup records',
+        'Responsive dashboard'
+      ]
+    },
+    {
+      title: 'DataFlow E-commerce Scraper',
+      description: 'A web-based data extraction tool designed to collect structured product information from supported e-commerce pages and prepare the results for review or export.',
+      technologies: ['Python', 'React', 'Web Scraping', 'Data Extraction', 'REST API'],
+      features: [
+        'Product URL submission',
+        'Structured product-data extraction',
+        'Results dashboard',
+        'Extraction history',
+        'Error handling for unsupported URLs'
+      ]
+    },
+    {
+      title: 'Ecom Site Batch Generator',
+      description: 'A Node.js automation tool that generates multiple e-commerce landing pages from one reusable HTML template and a JSON configuration file.',
+      technologies: ['Node.js', 'JavaScript', 'HTML', 'CSS', 'JSON', 'File System Automation'],
+      features: [
+        'Reusable HTML template',
+        'JSON-driven site content',
+        'Batch generation of landing pages',
+        'Separate output folder for each site',
+        'Reduced repetitive manual work'
       ]
     },
     {
       title: 'Internal Audit Management System',
-      description: 'A comprehensive web-based platform for managing internal audits, generating reports, and analyzing audit data. Developed using Laravel and MySQL, this system streamlines the entire audit workflow from planning to reporting.',
-      technologies: ['Laravel', 'MySQL', 'PHP', 'PDF Export', 'JavaScript'],
+      description: 'A Laravel-based web application developed during an internship to help digitize and organize an internal audit workflow that previously relied on paper-based processes.',
+      technologies: ['Laravel', 'PHP', 'JavaScript', 'MySQL', 'Bootstrap', 'DomPDF'],
       features: [
-        'Automated audit report generation with PDF export',
-        'Advanced SQL queries for data analysis',
-        'Dynamic data filtering and search functionality',
-        'Comprehensive form validation system',
         'Role-based access control',
-        'Audit trail and activity logging'
+        'Audit workflow management',
+        'Dashboard and reporting',
+        'PDF document generation',
+        'Database-backed records'
       ]
     }
   ];
@@ -34,8 +68,8 @@ function ProjectsPage() {
   return (
     <>
       <Helmet>
-        <title>Projects - Don Robert Dimasayao</title>
-        <meta name="description" content="Explore the portfolio of projects by Don Robert Dimasayao, including AR learning systems and audit management platforms." />
+        <title>Projects | Don Robert Dimasayao</title>
+        <meta name="description" content="Explore full-stack web development, automation, augmented reality, and internal business system projects by Don Robert Dimasayao." />
       </Helmet>
 
       <div className="min-h-screen py-20">
@@ -43,13 +77,13 @@ function ProjectsPage() {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">My Projects</h1>
             <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
-              A showcase of my work in software development, AR technology, and data management systems
+              A showcase of my work in full-stack web development, internal tools, automation, augmented reality, and data extraction systems
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} index={index} />
+              <ProjectCard key={project.title} project={project} index={index} />
             ))}
           </div>
         </div>
