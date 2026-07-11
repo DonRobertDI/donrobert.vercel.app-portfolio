@@ -1,6 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { Check, Copy, ExternalLink } from 'lucide-react';
+
+function CopyCredentialButton({ label, value }) {
+  const [feedback, setFeedback] = useState('');
+
+  useEffect(() => {
+    if (!feedback) return undefined;
+
+    const timeout = window.setTimeout(() => setFeedback(''), 1800);
+    return () => window.clearTimeout(timeout);
+  }, [feedback]);
+
+  const copyValue = async () => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setFeedback('Copied');
+    } catch {
+      setFeedback('Copy failed');
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      className="project-card__copy"
+      onClick={copyValue}
+      aria-label={`Copy demo ${label}`}
+      title={`Copy ${label}`}
+    >
+      {feedback === 'Copied' ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
+      <span aria-live="polite">{feedback || 'Copy'}</span>
+    </button>
+  );
+}
+
+function DemoCredentials({ credentials }) {
+  return (
+    <div className="project-card__credentials">
+      <div className="project-card__credentials-heading">
+        <strong>Demo Credentials</strong>
+        <span>For portfolio demonstration only.</span>
+      </div>
+
+      <dl>
+        <div>
+          <dt>Email</dt>
+          <dd>{credentials.email}</dd>
+          <CopyCredentialButton label="email" value={credentials.email} />
+        </div>
+        <div>
+          <dt>Password</dt>
+          <dd>{credentials.password}</dd>
+          <CopyCredentialButton label="password" value={credentials.password} />
+        </div>
+      </dl>
+    </div>
+  );
+}
+
 function ProjectCard({ project, index }) {
   return (
     <motion.div
@@ -41,6 +99,23 @@ function ProjectCard({ project, index }) {
             ))}
           </ul>
         )}
+
+        {project.liveUrl && (
+          <div className="project-card__actions">
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-secondary project-card__live"
+              aria-label={`Open live demo for ${project.title}`}
+            >
+              Live Demo
+              <ExternalLink aria-hidden="true" />
+            </a>
+          </div>
+        )}
+
+        {project.demoCredentials && <DemoCredentials credentials={project.demoCredentials} />}
 
         <div className="project-card__tech" aria-label="Technologies">
           {project.technologies.map((tech) => (

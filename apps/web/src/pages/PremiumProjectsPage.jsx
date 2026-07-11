@@ -7,24 +7,32 @@ const projects = [
   {
     title: 'Anatomy Trainer',
     description: 'An augmented reality learning system created as a thesis project for nursing students. It provides interactive anatomy models and educational activities to support anatomy learning.',
+    liveUrl: 'https://anatomytrainer.web.app/login',
+    demoCredentials: {
+      email: 'dimasayaodonrobert@gmail.com',
+      password: 'bqbqsa05'
+    },
     technologies: ['Unity', 'C#', 'Vuforia', 'Firebase', 'Augmented Reality'],
     features: ['Interactive human anatomy models', 'AR-based visualization', 'Learning activities and assessments', 'Student progress-oriented experience']
   },
   {
     title: 'Christmas Light Mockup Studio',
     description: 'A professional full-stack MVP for a Christmas light installation company. It allows users to manage customers, upload property images, and generate AI-assisted lighting mockups.',
+    liveUrl: 'https://mockup-studioserver-production.up.railway.app/',
     technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'REST API', 'AI Integration'],
     features: ['Customer management', 'Image uploads', 'AI-generated mockup workflow', 'Stored customer mockup records', 'Responsive dashboard']
   },
   {
     title: 'DataFlow E-commerce Scraper',
     description: 'A web-based data extraction tool designed to collect structured product information from supported e-commerce pages and prepare the results for review or export.',
+    liveUrl: 'https://dataflow-scraper-web.vercel.app/',
     technologies: ['Python', 'React', 'Web Scraping', 'Data Extraction', 'REST API'],
     features: ['Product URL submission', 'Structured product-data extraction', 'Results dashboard', 'Extraction history', 'Error handling for unsupported URLs']
   },
   {
     title: 'Ecom Site Batch Generator',
     description: 'A Node.js automation tool that generates multiple e-commerce landing pages from one reusable HTML template and a JSON configuration file.',
+    liveUrl: 'https://ecom-site-batch-generator.vercel.app/',
     technologies: ['Node.js', 'JavaScript', 'HTML', 'CSS', 'JSON', 'File System Automation'],
     features: ['Reusable HTML template', 'JSON-driven site content', 'Batch generation of landing pages', 'Separate output folder for each site', 'Reduced repetitive manual work']
   },

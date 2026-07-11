@@ -10,12 +10,18 @@ const featuredProjects = [
   {
     title: 'Anatomy Trainer',
     description: 'An augmented reality learning system designed to help nursing students study human anatomy through interactive 3D models and learning activities.',
+    liveUrl: 'https://anatomytrainer.web.app/login',
+    demoCredentials: {
+      email: 'dimasayaodonrobert@gmail.com',
+      password: 'bqbqsa05'
+    },
     technologies: ['Unity', 'C#', 'Vuforia', 'Firebase', 'Augmented Reality'],
     features: ['Interactive 3D anatomy models', 'Augmented reality visualization', 'Learning modules and assessments', 'Student-focused educational interface']
   },
   {
     title: 'Christmas Light Mockup Studio',
     description: 'A full-stack internal business tool for managing customers and generating AI-assisted Christmas light installation mockups from uploaded property images.',
+    liveUrl: 'https://mockup-studioserver-production.up.railway.app/',
     technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'REST API', 'Database', 'AI Integration'],
     features: ['Customer record management', 'Image upload workflow', 'AI-assisted mockup generation', 'Saved mockup history', 'Responsive business dashboard']
   }
