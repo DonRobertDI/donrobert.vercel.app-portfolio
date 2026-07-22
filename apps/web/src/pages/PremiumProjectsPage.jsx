@@ -37,6 +37,14 @@ const projects = [
     features: ['Reusable HTML template', 'JSON-driven site content', 'Batch generation of landing pages', 'Separate output folder for each site', 'Reduced repetitive manual work']
   },
   {
+    title: 'AI Resume Tailor – Developer & VA',
+    description: 'A Make.com workflow that processes job descriptions through separate Developer and Virtual Assistant routes, maps role-targeted resume content into Google Docs templates, and creates organized PDF and DOCX resume files.',
+    liveUrl: 'https://us2.make.com/public/shared-scenario/fO97JbrfxsB/ai-resume-tailor-developer-va',
+    actionLabel: 'View Automation',
+    technologies: ['Make.com', 'Google Forms', 'Google Sheets', 'Google Docs', 'Google Drive', 'Workflow Automation'],
+    features: ['Form-based job application input', 'Separate Developer and Virtual Assistant workflow routes', 'Role-specific resume template selection', 'Automated document field mapping', 'PDF and DOCX resume generation', 'Consistent file naming and Google Drive storage']
+  },
+  {
     title: 'Internal Audit Management System',
     description: 'A Laravel-based web application developed during an internship to help digitize and organize an internal audit workflow that previously relied on paper-based processes.',
     technologies: ['Laravel', 'PHP', 'JavaScript', 'MySQL', 'Bootstrap', 'DomPDF'],

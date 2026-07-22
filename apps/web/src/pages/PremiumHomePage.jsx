@@ -19,11 +19,12 @@ const featuredProjects = [
     features: ['Interactive 3D anatomy models', 'Augmented reality visualization', 'Learning modules and assessments', 'Student-focused educational interface']
   },
   {
-    title: 'Christmas Light Mockup Studio',
-    description: 'A full-stack internal business tool for managing customers and generating AI-assisted Christmas light installation mockups from uploaded property images.',
-    liveUrl: 'https://mockup-studioserver-production.up.railway.app/',
-    technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'REST API', 'Database', 'AI Integration'],
-    features: ['Customer record management', 'Image upload workflow', 'AI-assisted mockup generation', 'Saved mockup history', 'Responsive business dashboard']
+    title: 'AI Resume Tailor – Developer & VA',
+    description: 'A routed Make.com automation that processes job descriptions through separate Developer and Virtual Assistant workflows and generates organized resume documents using role-specific templates.',
+    liveUrl: 'https://us2.make.com/public/shared-scenario/fO97JbrfxsB/ai-resume-tailor-developer-va',
+    actionLabel: 'View Automation',
+    technologies: ['Make.com', 'Google Sheets', 'Google Docs', 'Google Drive', 'Workflow Automation'],
+    features: ['Developer and Virtual Assistant routing', 'Role-specific resume templates', 'Automated document field mapping', 'PDF and DOCX generation', 'Google Drive file organization']
   }
 ];
 

@@ -5,22 +5,105 @@ import SkillCard from '@/components/SkillCard.jsx';
 import PageHero from '@/components/PageHero.jsx';
 
 const skillCategories = [
-  { category: 'Frontend', skills: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Vite', 'Tailwind CSS', 'Responsive Web Design'] },
-  { category: 'Backend', skills: ['PHP', 'Laravel', 'Node.js', 'Express.js', 'REST API Development', 'MVC Architecture'] },
-  { category: 'Databases', skills: ['MySQL', 'PostgreSQL', 'Database Design', 'Database Management', 'SQL'] },
-  { category: 'Tools and Platforms', skills: ['Git', 'GitHub', 'Visual Studio Code', 'Postman', 'npm', 'Figma', 'Android Studio'] },
-  { category: 'Development Skills', skills: ['Full-Stack Web Development', 'API Integration', 'Debugging and Troubleshooting', 'PDF Generation', 'Web Scraping', 'Data Extraction', 'Workflow Automation', 'AI-Assisted Development', 'Technical Documentation', 'Software Development Life Cycle'] },
-  { category: 'Soft Skills', skills: ['Problem Solving', 'Analytical Thinking', 'Communication', 'Team Collaboration', 'Adaptability', 'Attention to Detail', 'Time Management', 'Fast Learner'] }
+  {
+    category: 'Frontend Development',
+    skills: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'TypeScript',
+      'React',
+      'Vite',
+      'Tailwind CSS',
+      'Responsive Web Design',
+      'React Router',
+      'Framer Motion'
+    ]
+  },
+  {
+    category: 'Backend and APIs',
+    skills: [
+      'Node.js',
+      'Express.js',
+      'PHP',
+      'Laravel',
+      'FastAPI',
+      'REST API Development',
+      'API Integration',
+      'MVC Architecture'
+    ]
+  },
+  {
+    category: 'Databases and Application Platforms',
+    skills: [
+      'MySQL',
+      'SQLite',
+      'Firebase',
+      'SQL',
+      'Database Design',
+      'Database Management',
+      'C#',
+      'Unity'
+    ]
+  },
+  {
+    category: 'Automation and Data Workflows',
+    skills: [
+      'Make.com',
+      'Workflow Automation',
+      'Workflow Routing',
+      'Document Automation',
+      'Google Forms',
+      'Google Sheets',
+      'Google Docs',
+      'Google Drive',
+      'AI-Assisted Development',
+      'Web Scraping',
+      'Data Extraction',
+      'Data Validation',
+      'CSV and PDF Export'
+    ]
+  },
+  {
+    category: 'Development Tools and Deployment',
+    skills: [
+      'Git',
+      'GitHub',
+      'Visual Studio Code',
+      'Postman',
+      'npm',
+      'Figma',
+      'Playwright',
+      'Vercel',
+      'Railway',
+      'Android Studio'
+    ]
+  },
+  {
+    category: 'Professional Strengths',
+    skills: [
+      'Problem Solving',
+      'Analytical Thinking',
+      'Attention to Detail',
+      'Clear Communication',
+      'Reliability',
+      'Adaptability',
+      'Iterative Testing',
+      'Technical Documentation',
+      'Time Management',
+      'Team Collaboration'
+    ]
+  }
 ];
 
 function PremiumSkillsPage() {
   return (
     <>
       <Helmet>
-        <title>Technical Skills | Don Robert Dimasayao</title>
-        <meta name="description" content="Technical skills of Don Robert Dimasayao across frontend development, backend development, databases, tools, automation, and software development practices." />
+        <title>Skills &amp; Tools | Don Robert Dimasayao</title>
+        <meta name="description" content="Development, automation, data, and software tools used by Don Robert Dimasayao across web applications, workflow automation, data extraction, and academic projects." />
       </Helmet>
-      <PageHero index="02" eyebrow="CAPABILITIES" title="Skills &" accent="expertise." description="A practical overview of the technologies, tools, and development skills I use to build web applications and software projects" />
+      <PageHero index="02" eyebrow="CAPABILITIES" title="Skills &" accent="tools." description="Technologies and workflows I have used across web development, automation, data extraction, and software projects" />
       <section className="section-pad page-content">
         <div className="section-shell skills-list">
           {skillCategories.map((category, categoryIndex) => (

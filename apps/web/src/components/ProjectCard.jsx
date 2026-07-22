@@ -107,9 +107,9 @@ function ProjectCard({ project, index }) {
               target="_blank"
               rel="noopener noreferrer"
               className="button-secondary project-card__live"
-              aria-label={`Open live demo for ${project.title}`}
+              aria-label={`${project.actionLabel || 'Open live demo'} for ${project.title}`}
             >
-              Live Demo
+              {project.actionLabel || 'Live Demo'}
               <ExternalLink aria-hidden="true" />
             </a>
           </div>
