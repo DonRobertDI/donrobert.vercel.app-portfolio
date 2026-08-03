@@ -19,12 +19,11 @@ const featuredProjects = [
     features: ['Interactive 3D anatomy models', 'Augmented reality visualization', 'Learning modules and assessments', 'Student-focused educational interface']
   },
   {
-    title: 'AI Resume Tailor – Developer & VA',
-    description: 'A routed Make.com automation that processes job descriptions through separate Developer and Virtual Assistant workflows and generates organized resume documents using role-specific templates.',
-    liveUrl: 'https://us2.make.com/public/shared-scenario/fO97JbrfxsB/ai-resume-tailor-developer-va',
-    actionLabel: 'View Automation',
-    technologies: ['Make.com', 'Google Sheets', 'Google Docs', 'Google Drive', 'Workflow Automation'],
-    features: ['Developer and Virtual Assistant routing', 'Role-specific resume templates', 'Automated document field mapping', 'PDF and DOCX generation', 'Google Drive file organization']
+    title: 'AdFlow Studio — AI Campaign Automation',
+    description: 'An end-to-end AI campaign production system that turns a submitted business brief into AI-generated advertising content, routes it through secure internal review, and produces a final branded campaign package.',
+    liveUrl: 'https://adflow-studio.pages.dev',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'n8n', 'PostgreSQL', 'Docker', 'Cloudflare Pages', 'Cloudflare Tunnel', 'Gotenberg', 'Gmail', 'Google Drive', 'GitHub'],
+    features: ['Website campaign intake with validation and PostgreSQL storage', 'AI-generated angles, hooks, ad copy, image directions, and video concepts', 'Secure internal approval, revision, and rejection workflow', 'Automated PDF generation, campaign workspace, and delivery tracking']
   }
 ];
 

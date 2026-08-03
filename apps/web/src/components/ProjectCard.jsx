@@ -100,18 +100,32 @@ function ProjectCard({ project, index }) {
           </ul>
         )}
 
-        {project.liveUrl && (
+        {(project.liveUrl || project.githubUrl) && (
           <div className="project-card__actions">
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button-secondary project-card__live"
-              aria-label={`${project.actionLabel || 'Open live demo'} for ${project.title}`}
-            >
-              {project.actionLabel || 'Live Demo'}
-              <ExternalLink aria-hidden="true" />
-            </a>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-secondary project-card__live"
+                aria-label={`${project.actionLabel || 'Open live demo'} for ${project.title}`}
+              >
+                {project.actionLabel || 'Live Demo'}
+                <ExternalLink aria-hidden="true" />
+              </a>
+            )}
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-secondary project-card__live"
+                aria-label={`View source code for ${project.title} on GitHub`}
+              >
+                GitHub
+                <ExternalLink aria-hidden="true" />
+              </a>
+            )}
           </div>
         )}
 

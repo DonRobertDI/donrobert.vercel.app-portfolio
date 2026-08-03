@@ -16,6 +16,13 @@ const projects = [
     features: ['Interactive human anatomy models', 'AR-based visualization', 'Learning activities and assessments', 'Student progress-oriented experience']
   },
   {
+    title: 'AdFlow Studio — AI Campaign Automation',
+    description: 'An end-to-end AI campaign production system that turns a submitted business brief into AI-generated advertising content, routes it through secure internal review, and produces a final branded campaign package.',
+    liveUrl: 'https://adflow-studio.pages.dev',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'n8n', 'PostgreSQL', 'Docker', 'Cloudflare Pages', 'Cloudflare Tunnel', 'Gotenberg', 'Gmail', 'Google Drive', 'GitHub'],
+    features: ['Website campaign intake with validation and PostgreSQL storage', 'AI-generated angles, hooks, ad copy, image directions, and video concepts', 'Secure internal approval, revision, and rejection workflow', 'Automated PDF generation, campaign workspace, and delivery tracking']
+  },
+  {
     title: 'Christmas Light Mockup Studio',
     description: 'A professional full-stack MVP for a Christmas light installation company. It allows users to manage customers, upload property images, and generate AI-assisted lighting mockups.',
     liveUrl: 'https://mockup-studioserver-production.up.railway.app/',

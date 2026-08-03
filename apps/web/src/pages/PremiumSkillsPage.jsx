@@ -49,6 +49,7 @@ const skillCategories = [
   {
     category: 'Automation and Data Workflows',
     skills: [
+      'n8n',
       'Make.com',
       'Workflow Automation',
       'Workflow Routing',
