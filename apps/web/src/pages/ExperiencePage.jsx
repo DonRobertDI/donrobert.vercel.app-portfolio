@@ -5,6 +5,33 @@ import ExperienceCard from '@/components/ExperienceCard.jsx';
 
 function ExperiencePage() {
   const experiences = [
+  {
+  "title": "AI Content Evaluator / Data Annotator",
+  "organization": "Innodata via MCRI Global Corporation · Freelance",
+  "period": "Aug 2026 - Oct 2026",
+  "location": "Remote",
+  "description": "Contributed to AI training tasks through software interface annotation, evidence-based description review, and guideline-driven quality checks.",
+  "achievements": [
+    "Annotated software interfaces with bounding boxes and descriptions of each control’s appearance, functionality, and user intention",
+    "Reviewed screenshots and recordings to identify missing controls, inaccurate labels, and bounding-box issues",
+    "Checked AI-generated descriptions against visible evidence and corrected inconsistencies",
+    "Applied task-specific rubrics to maintain consistent labeling and clear written documentation"
+  ]
+},
+  {
+  "title": "Virtual Assistant — Library Operations",
+  "organization": "Primeway Commerce",
+  "period": "Aug 2026 - Oct 2026",
+  "location": "Remote",
+  "description": "Supported e-commerce operations through product uploads, funnel building, competitor research, localization, and process documentation.",
+  "achievements": [
+    "Maintained product information, uploaded products, organized creative assets, and recorded task updates",
+    "Built and checked funnels, advertorials, and sales pages, including product details, pricing, links, and checkout flows",
+    "Prepared and reviewed English, Dutch, and Danish content and images for label, quantity, currency, and visual consistency",
+    "Researched competitor ads and landing pages and organized swipe sources and creative batches",
+    "Created illustrated SOPs and a training website for ad swiping and Double Down ad creation workflows"
+  ]
+},
     {
       title: 'Web Developer Intern',
       organization: 'Department of Science and Technology',
@@ -42,7 +69,7 @@ function ExperiencePage() {
     <>
       <Helmet>
         <title>Experience and Education | Don Robert Dimasayao</title>
-        <meta name="description" content="Experience and education of Don Robert Dimasayao, a junior full-stack web developer with Laravel internship experience and a Computer Science background." />
+        <meta name="description" content="Experience and education of Don Robert Dimasayao, covering virtual assistance, e-commerce operations, AI data annotation, and web development." />
       </Helmet>
 
       <div className="min-h-screen py-20">
@@ -50,7 +77,7 @@ function ExperiencePage() {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Experience & Education</h1>
             <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
-              My internship experience, education, and hands-on software development background
+              My experience in virtual assistance, AI data annotation, and web development, alongside my education
             </p>
           </div>
 

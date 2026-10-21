@@ -7,6 +7,33 @@ import { Reveal } from '@/components/PageTransition.jsx';
 
 const experiences = [
   {
+  "title": "AI Content Evaluator / Data Annotator",
+  "organization": "Innodata via MCRI Global Corporation · Freelance",
+  "period": "Aug 2026 - Oct 2026",
+  "location": "Remote",
+  "description": "Contributed to AI training tasks through software interface annotation, evidence-based description review, and guideline-driven quality checks.",
+  "achievements": [
+    "Annotated software interfaces with bounding boxes and descriptions of each control’s appearance, functionality, and user intention",
+    "Reviewed screenshots and recordings to identify missing controls, inaccurate labels, and bounding-box issues",
+    "Checked AI-generated descriptions against visible evidence and corrected inconsistencies",
+    "Applied task-specific rubrics to maintain consistent labeling and clear written documentation"
+  ]
+},
+  {
+  "title": "Virtual Assistant — Library Operations",
+  "organization": "Primeway Commerce",
+  "period": "Aug 2026 - Oct 2026",
+  "location": "Remote",
+  "description": "Supported e-commerce operations through product uploads, funnel building, competitor research, localization, and process documentation.",
+  "achievements": [
+    "Maintained product information, uploaded products, organized creative assets, and recorded task updates",
+    "Built and checked funnels, advertorials, and sales pages, including product details, pricing, links, and checkout flows",
+    "Prepared and reviewed English, Dutch, and Danish content and images for label, quantity, currency, and visual consistency",
+    "Researched competitor ads and landing pages and organized swipe sources and creative batches",
+    "Created illustrated SOPs and a training website for ad swiping and Double Down ad creation workflows"
+  ]
+},
+  {
     title: 'Web Developer Intern',
     organization: 'Department of Science and Technology',
     period: 'Jun 2025 - Jul 2025',
@@ -59,9 +86,9 @@ function PremiumExperiencePage() {
     <>
       <Helmet>
         <title>Experience and Education | Don Robert Dimasayao</title>
-        <meta name="description" content="Experience and education of Don Robert Dimasayao, a junior full-stack web developer with Laravel internship experience and a Computer Science background." />
+        <meta name="description" content="Experience and education of Don Robert Dimasayao, covering virtual assistance, e-commerce operations, AI data annotation, and web development." />
       </Helmet>
-      <PageHero index="03" eyebrow="JOURNEY" title="Experience &" accent="education." description="My internship experience, education, and hands-on software development background" />
+      <PageHero index="03" eyebrow="JOURNEY" title="Experience &" accent="education." description="My experience in virtual assistance, AI data annotation, and web development, alongside my education" />
       <div className="section-pad page-content"><div className="section-shell experience-layout">
         <TimelineSection index="01 / WORK" title="Professional Experience" entries={experiences} />
         <TimelineSection index="02 / STUDY" title="Education" icon={GraduationCap} entries={education} />
